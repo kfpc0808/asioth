@@ -3,42 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASIOTH — Super Intelligence, Beyond Tomorrow</title>
-<meta name="description" content="ASIOTH — Artificial Super Intelligence, Beyond Tomorrow. 시대를 초월하는 초지능 플랫폼.">
-<meta property="og:title" content="ASIOTH">
-<meta property="og:description" content="Super Intelligence, Beyond Tomorrow">
+<title>ASIOTH — AI 시대, 중소기업을 위한 초지능 경영 플랫폼</title>
+<meta name="description" content="ASIOTH — AI 시대 중소기업을 위한 통합 경영 플랫폼. 홈페이지, 경영관리, 마케팅, 교육까지. Super Intelligence, Beyond Tomorrow.">
+<meta property="og:title" content="ASIOTH — 중소기업을 위한 AI 경영 플랫폼">
+<meta property="og:description" content="AI 시대, 중소기업도 대기업 수준의 지능이 필요합니다. 기업홈페이지부터 통합 경영관리까지.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://asioth.com">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400;500&family=Noto+Sans+KR:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@300;400;500&family=Noto+Sans+KR:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
   --bg: #0a0908;
   --bg-soft: #12100e;
+  --bg-card: #171410;
   --ink: #f5f1ea;
   --ink-muted: #a09890;
   --ink-dim: #555049;
   --accent: #d4a574;
   --accent-deep: #8b6f47;
+  --accent-bright: #e6b988;
   --line: #2a2520;
+  --line-bright: #3a342d;
   --purple: #6b4e7f;
   --serif: 'Fraunces', 'Noto Sans KR', serif;
   --sans: 'Noto Sans KR', -apple-system, sans-serif;
   --mono: 'JetBrains Mono', monospace;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
@@ -51,7 +47,6 @@ body {
   position: relative;
 }
 
-/* grain texture overlay */
 body::before {
   content: '';
   position: fixed;
@@ -63,7 +58,6 @@ body::before {
   mix-blend-mode: overlay;
 }
 
-/* subtle gradient wash */
 body::after {
   content: '';
   position: fixed;
@@ -83,24 +77,18 @@ body::after {
   z-index: 1;
 }
 
-/* ============== NAV ============== */
+/* NAV */
 nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 50;
-  padding: 28px 0;
+  padding: 24px 0;
   backdrop-filter: blur(20px);
-  background: rgba(10, 9, 8, 0.6);
+  background: rgba(10, 9, 8, 0.75);
   border-bottom: 1px solid rgba(42, 37, 32, 0.4);
 }
 
-.nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+.nav-inner { display: flex; justify-content: space-between; align-items: center; }
 
 .logo {
   font-family: var(--serif);
@@ -112,8 +100,7 @@ nav {
 
 .logo-mark {
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 8px; height: 8px;
   background: var(--accent);
   border-radius: 50%;
   margin-right: 10px;
@@ -121,6 +108,19 @@ nav {
   transform: translateY(-2px);
   box-shadow: 0 0 12px rgba(212, 165, 116, 0.6);
 }
+
+.nav-links { display: flex; gap: 40px; align-items: center; }
+
+.nav-link {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-link:hover { color: var(--accent); }
 
 .nav-meta {
   font-family: var(--mono);
@@ -132,8 +132,7 @@ nav {
 
 .nav-meta .dot {
   display: inline-block;
-  width: 6px;
-  height: 6px;
+  width: 6px; height: 6px;
   background: #4ade80;
   border-radius: 50%;
   margin-right: 8px;
@@ -147,7 +146,7 @@ nav {
   50% { opacity: 0.4; }
 }
 
-/* ============== HERO ============== */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -158,15 +157,13 @@ nav {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: 80px;
   align-items: center;
   width: 100%;
 }
 
-.hero-left {
-  animation: fadeUp 1.2s ease-out;
-}
+.hero-left { animation: fadeUp 1.2s ease-out; }
 
 .hero-label {
   font-family: var(--mono);
@@ -182,18 +179,17 @@ nav {
 
 .hero-label::before {
   content: '';
-  width: 40px;
-  height: 1px;
+  width: 40px; height: 1px;
   background: var(--accent);
 }
 
 h1.hero-title {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(72px, 10vw, 144px);
-  line-height: 0.92;
+  font-size: clamp(64px, 8.5vw, 120px);
+  line-height: 0.94;
   letter-spacing: -0.04em;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
   color: var(--ink);
 }
 
@@ -201,38 +197,93 @@ h1.hero-title .shine {
   font-style: italic;
   font-weight: 400;
   color: var(--accent);
-  position: relative;
+}
+
+.hero-subtitle {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: clamp(18px, 1.8vw, 22px);
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  max-width: 560px;
+}
+
+.hero-subtitle strong {
+  color: var(--accent-bright);
+  font-weight: 500;
 }
 
 .hero-tagline {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 300;
-  font-size: clamp(22px, 2.2vw, 28px);
+  font-size: clamp(19px, 1.8vw, 24px);
   color: var(--ink-muted);
   line-height: 1.4;
   margin-bottom: 48px;
-  max-width: 480px;
+  max-width: 520px;
 }
+
+.hero-cta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 16px 32px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-primary:hover {
+  background: var(--accent-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 165, 116, 0.25);
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 16px 28px;
+  color: var(--ink-muted);
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--line-bright);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
 .hero-korean {
   font-family: var(--sans);
-  font-weight: 200;
-  font-size: 15px;
+  font-weight: 300;
+  font-size: 14px;
   color: var(--ink-dim);
   letter-spacing: 0.02em;
   line-height: 1.8;
-  max-width: 420px;
+  max-width: 520px;
   padding-top: 32px;
   border-top: 1px solid var(--line);
 }
 
-.hero-korean strong {
-  font-weight: 400;
-  color: var(--ink-muted);
-}
+.hero-korean strong { font-weight: 500; color: var(--ink-muted); }
 
-/* right panel — the "mark" */
 .hero-right {
   position: relative;
   display: flex;
@@ -244,14 +295,11 @@ h1.hero-title .shine {
 .mark-canvas {
   width: 100%;
   aspect-ratio: 1;
-  max-width: 520px;
+  max-width: 480px;
   position: relative;
 }
 
-.mark-canvas svg {
-  width: 100%;
-  height: 100%;
-}
+.mark-canvas svg { width: 100%; height: 100%; }
 
 .ring-text {
   fill: var(--ink-muted);
@@ -279,65 +327,224 @@ h1.hero-title .shine {
   text-transform: uppercase;
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.rotating {
-  transform-origin: center;
-  animation: rotate 60s linear infinite;
-}
-
-.rotating-reverse {
-  transform-origin: center;
-  animation: rotate 90s linear infinite reverse;
-}
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.rotating { transform-origin: center; animation: rotate 60s linear infinite; }
+.rotating-reverse { transform-origin: center; animation: rotate 90s linear infinite reverse; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* ============== DIVIDER SECTION ============== */
-.section {
+/* MISSION */
+.mission {
   padding: 140px 0;
-  position: relative;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, transparent, rgba(18, 16, 14, 0.4));
 }
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.mission-label-col { position: sticky; top: 140px; }
 
 .section-label {
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.3em;
-  color: var(--ink-muted);
+  color: var(--accent);
   text-transform: uppercase;
   margin-bottom: 24px;
 }
 
-.section-title {
+.section-number {
   font-family: var(--serif);
+  font-style: italic;
+  font-size: 80px;
   font-weight: 300;
-  font-size: clamp(40px, 5vw, 64px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 80px;
-  max-width: 900px;
+  color: var(--accent-deep);
+  line-height: 1;
+  margin-bottom: 16px;
 }
 
-.section-title em {
+.mission-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  line-height: 1.8;
+}
+
+.mission-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+  color: var(--ink);
+}
+
+.mission-title em {
   font-style: italic;
   color: var(--accent);
   font-weight: 400;
 }
 
-/* philosophy block */
+.mission-body {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--ink-muted);
+  max-width: 640px;
+}
+
+.mission-body p + p { margin-top: 28px; }
+.mission-body strong { color: var(--ink); font-weight: 500; }
+
+/* PLATFORM */
+.platform {
+  padding: 140px 0;
+  border-top: 1px solid var(--line);
+  background: var(--bg-soft);
+}
+
+.platform-header { max-width: 900px; margin-bottom: 80px; }
+
+.platform-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(44px, 5.5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 32px;
+}
+
+.platform-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.platform-intro {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+  max-width: 620px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.service-card {
+  background: var(--bg-card);
+  padding: 56px 48px;
+  position: relative;
+  transition: background 0.4s ease;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover { background: rgba(212, 165, 116, 0.04); }
+
+.service-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-num::before {
+  content: '';
+  width: 16px; height: 1px;
+  background: var(--accent);
+}
+
+.service-icon {
+  width: 48px; height: 48px;
+  margin-bottom: 28px;
+  opacity: 0.9;
+}
+
+.service-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.service-title-en {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  letter-spacing: 0.01em;
+}
+
+.service-desc {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-muted);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.service-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.service-feature {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  padding-left: 14px;
+  position: relative;
+}
+
+.service-feature::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px; height: 4px;
+  background: var(--accent-deep);
+  border-radius: 50%;
+}
+
+/* PHILOSOPHY */
 .philosophy {
-  background: linear-gradient(180deg, transparent, rgba(18, 16, 14, 0.6));
+  padding: 140px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -363,7 +570,7 @@ h1.hero-title .shine {
 .philosophy-body {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1.45;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -372,13 +579,12 @@ h1.hero-title .shine {
 .philosophy-body .kor {
   font-family: var(--sans);
   font-weight: 200;
-  font-size: 24px;
+  font-size: 22px;
   letter-spacing: -0.005em;
+  color: var(--ink-muted);
 }
 
-.philosophy-body p + p {
-  margin-top: 40px;
-}
+.philosophy-body p + p { margin-top: 32px; }
 
 .philosophy-body em {
   font-style: italic;
@@ -386,9 +592,27 @@ h1.hero-title .shine {
   font-weight: 400;
 }
 
-/* ============== DECOMPOSITION ============== */
+/* ETYMOLOGY */
 .decomp {
+  padding: 140px 0;
   border-bottom: 1px solid var(--line);
+}
+
+.decomp-header { margin-bottom: 72px; }
+
+.decomp-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 800px;
+}
+
+.decomp-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 400;
 }
 
 .decomp-showcase {
@@ -400,25 +624,20 @@ h1.hero-title .shine {
 }
 
 .decomp-cell {
-  padding: 72px 48px;
+  padding: 64px 44px;
   border-right: 1px solid var(--line);
   position: relative;
   transition: background 0.4s ease;
 }
 
-.decomp-cell:last-child {
-  border-right: none;
-}
-
-.decomp-cell:hover {
-  background: rgba(212, 165, 116, 0.03);
-}
+.decomp-cell:last-child { border-right: none; }
+.decomp-cell:hover { background: rgba(212, 165, 116, 0.03); }
 
 .decomp-big {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 300;
-  font-size: 88px;
+  font-size: 80px;
   line-height: 1;
   color: var(--accent);
   margin-bottom: 24px;
@@ -431,24 +650,25 @@ h1.hero-title .shine {
   letter-spacing: 0.3em;
   color: var(--ink-muted);
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .decomp-desc {
   font-family: var(--sans);
   font-weight: 300;
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ink-muted);
 }
+
+.decomp-desc em { font-style: italic; color: var(--accent); }
 
 .decomp-operator {
   position: absolute;
   top: 50%;
   right: -12px;
   transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
+  width: 24px; height: 24px;
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -461,52 +681,129 @@ h1.hero-title .shine {
   z-index: 2;
 }
 
-/* ============== MANIFESTO ============== */
-.manifesto {
-  text-align: center;
-  padding: 180px 0;
-}
+/* MANIFESTO */
+.manifesto { text-align: center; padding: 160px 0; }
 
 .manifesto-mark {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 40px;
+  font-size: 36px;
   color: var(--accent);
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .manifesto-text {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(36px, 4.5vw, 56px);
+  font-size: clamp(34px, 4.2vw, 52px);
   line-height: 1.25;
   letter-spacing: -0.02em;
   max-width: 980px;
-  margin: 0 auto 48px;
+  margin: 0 auto 36px;
 }
 
-.manifesto-text em {
-  font-style: italic;
-  color: var(--accent);
-  font-weight: 400;
-}
+.manifesto-text em { font-style: italic; color: var(--accent); font-weight: 400; }
 
 .manifesto-kor {
   font-family: var(--sans);
-  font-weight: 200;
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 17px;
   color: var(--ink-dim);
   letter-spacing: 0.02em;
   line-height: 1.8;
-  max-width: 560px;
+  max-width: 580px;
   margin: 0 auto;
 }
 
-/* ============== COMING ============== */
+/* TIMELINE */
+.timeline-section {
+  padding: 140px 0;
+  border-top: 1px solid var(--line);
+  background: var(--bg-soft);
+}
+
+.timeline-title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(36px, 4.5vw, 54px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 64px;
+  max-width: 700px;
+}
+
+.timeline-title em { font-style: italic; color: var(--accent); font-weight: 400; }
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), var(--line), var(--line));
+}
+
+.timeline-item { position: relative; padding-top: 60px; }
+
+.timeline-dot {
+  position: absolute;
+  top: 18px; left: 0;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 2px solid var(--accent);
+}
+
+.timeline-item.active .timeline-dot {
+  background: var(--accent);
+  box-shadow: 0 0 16px rgba(212, 165, 116, 0.5);
+}
+
+.timeline-item.future .timeline-dot { border-color: var(--line-bright); }
+
+.timeline-phase {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.timeline-item.future .timeline-phase { color: var(--ink-dim); }
+
+.timeline-year {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 32px;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.timeline-item.future .timeline-year { color: var(--ink-dim); }
+
+.timeline-desc {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+
+/* COMING */
 .coming {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: var(--bg-soft);
   padding: 100px 0;
 }
 
@@ -523,21 +820,17 @@ h1.hero-title .shine {
   letter-spacing: 0.3em;
   color: var(--ink-muted);
   text-transform: uppercase;
+  line-height: 1.8;
 }
 
-.coming-side.right {
-  text-align: right;
-}
-
-.coming-center {
-  text-align: center;
-}
+.coming-side.right { text-align: right; }
+.coming-center { text-align: center; }
 
 .coming-center .year {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 300;
-  font-size: 120px;
+  font-size: 108px;
   line-height: 1;
   color: var(--accent);
   letter-spacing: -0.03em;
@@ -546,18 +839,15 @@ h1.hero-title .shine {
 
 .coming-center .label {
   font-family: var(--mono);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.4em;
   color: var(--ink-muted);
   text-transform: uppercase;
   margin-top: 16px;
 }
 
-/* ============== CONTACT ============== */
-.contact {
-  padding: 160px 0;
-  text-align: center;
-}
+/* CONTACT */
+.contact { padding: 160px 0; text-align: center; }
 
 .contact-label {
   font-family: var(--mono);
@@ -571,15 +861,42 @@ h1.hero-title .shine {
 .contact-title {
   font-family: var(--serif);
   font-weight: 300;
-  font-size: clamp(40px, 5vw, 64px);
+  font-size: clamp(38px, 5vw, 60px);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 
-.contact-title em {
-  font-style: italic;
-  color: var(--accent);
+.contact-title em { font-style: italic; color: var(--accent); }
+
+.contact-sub {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--ink-muted);
+  margin-bottom: 48px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-emails {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.contact-email-block { text-align: center; }
+
+.contact-email-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .contact-email {
@@ -587,35 +904,32 @@ h1.hero-title .shine {
   font-family: var(--serif);
   font-style: italic;
   font-weight: 400;
-  font-size: 32px;
+  font-size: 26px;
   color: var(--accent);
   text-decoration: none;
   position: relative;
-  padding-bottom: 8px;
+  padding-bottom: 6px;
   letter-spacing: -0.01em;
 }
 
 .contact-email::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
+  bottom: 0; left: 0;
+  width: 100%; height: 1px;
   background: var(--accent);
   transform: scaleX(0.3);
   transform-origin: left;
   transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.contact-email:hover::after {
-  transform: scaleX(1);
-}
+.contact-email:hover::after { transform: scaleX(1); }
 
-/* ============== FOOTER ============== */
+/* FOOTER */
 footer {
   border-top: 1px solid var(--line);
   padding: 56px 0 48px;
+  background: var(--bg);
 }
 
 .footer-inner {
@@ -659,96 +973,65 @@ footer {
   transition: color 0.3s;
 }
 
-.footer-meta a:hover {
-  color: var(--accent);
-}
+.footer-meta a:hover { color: var(--accent); }
 
-/* ============== RESPONSIVE ============== */
+/* RESPONSIVE */
 @media (max-width: 960px) {
   .container { padding: 0 24px; }
+  .nav-links { display: none; }
 
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
+  .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+  .hero-right { order: -1; }
+  .mark-canvas { max-width: 280px; }
+  h1.hero-title { font-size: 56px; }
 
-  .hero-right {
-    order: -1;
-  }
+  .mission-grid { grid-template-columns: 1fr; gap: 40px; }
+  .mission-label-col { position: static; }
 
-  .mark-canvas {
-    max-width: 320px;
-  }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { padding: 44px 32px; min-height: auto; }
 
-  .philosophy-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+  .philosophy-grid { grid-template-columns: 1fr; gap: 32px; }
+  .philosophy-marker { position: static; }
+  .philosophy-body { font-size: 22px; }
+  .philosophy-body .kor { font-size: 18px; }
 
-  .philosophy-marker {
-    position: static;
-  }
-
-  .philosophy-body {
-    font-size: 22px;
-  }
-
-  .philosophy-body .kor {
-    font-size: 18px;
-  }
-
-  .decomp-showcase {
-    grid-template-columns: 1fr;
-  }
-
+  .decomp-showcase { grid-template-columns: 1fr; }
   .decomp-cell {
     border-right: none;
     border-bottom: 1px solid var(--line);
-    padding: 48px 32px;
+    padding: 44px 32px;
   }
-
-  .decomp-cell:last-child {
-    border-bottom: none;
-  }
-
+  .decomp-cell:last-child { border-bottom: none; }
   .decomp-operator {
-    top: auto;
-    right: auto;
-    bottom: -12px;
-    left: 50%;
+    top: auto; right: auto;
+    bottom: -12px; left: 50%;
     transform: translateX(-50%);
   }
+  .decomp-big { font-size: 56px; }
 
-  .decomp-big {
-    font-size: 64px;
+  .timeline { grid-template-columns: 1fr; gap: 24px; }
+  .timeline::before { display: none; }
+  .timeline-item {
+    padding-top: 0;
+    padding-left: 32px;
+    border-left: 1px solid var(--line);
+    padding-bottom: 24px;
   }
+  .timeline-dot { left: -6px; top: 4px; }
 
-  .coming-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    text-align: center;
-  }
+  .coming-grid { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+  .coming-side, .coming-side.right { text-align: center; }
+  .coming-center .year { font-size: 72px; }
 
-  .coming-side, .coming-side.right {
-    text-align: center;
-  }
+  .contact-emails { flex-direction: column; gap: 32px; }
 
-  .coming-center .year {
-    font-size: 80px;
-  }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .footer-meta { text-align: left; }
 
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-  }
-
-  .footer-meta {
-    text-align: left;
-  }
-
-  .section { padding: 80px 0; }
+  .mission, .platform, .philosophy, .decomp, .timeline-section { padding: 80px 0; }
   .manifesto { padding: 100px 0; }
+  .contact { padding: 100px 0; }
 }
 </style>
 </head>
@@ -758,7 +1041,12 @@ footer {
 <nav>
   <div class="container nav-inner">
     <div class="logo"><span class="logo-mark"></span>ASIOTH</div>
-    <div class="nav-meta"><span class="dot"></span>Est. 2026 — In development</div>
+    <div class="nav-links">
+      <a href="#platform" class="nav-link">Platform</a>
+      <a href="#philosophy" class="nav-link">Philosophy</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-meta"><span class="dot"></span>Est. 2026 — Launching Soon</div>
   </div>
 </nav>
 
@@ -768,20 +1056,30 @@ footer {
     <div class="hero-grid">
 
       <div class="hero-left">
-        <div class="hero-label">A new kind of intelligence</div>
+        <div class="hero-label">AI for small and mid-sized business</div>
 
         <h1 class="hero-title">
           Beyond<br>
           <span class="shine">tomorrow.</span>
         </h1>
 
-        <p class="hero-tagline">
-          Super intelligence, shaped for the businesses of a generation not yet here.
+        <p class="hero-subtitle">
+          중소기업을 위한 <strong>AI 통합 경영 플랫폼</strong>.<br>
+          홈페이지부터 경영관리, 마케팅, 교육까지 — 하나의 지능으로.
         </p>
 
+        <p class="hero-tagline">
+          The intelligence of the largest,<br>shaped for the smallest.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#platform" class="btn-primary">플랫폼 살펴보기</a>
+          <a href="#contact" class="btn-ghost">Contact</a>
+        </div>
+
         <div class="hero-korean">
-          <strong>ASIOTH.</strong> ASI + Oth(Beyond).<br>
-          시대를 초월하는 초지능 플랫폼.
+          <strong>ASIOTH.</strong> ASI(Artificial Super Intelligence) + Oth(Beyond).<br>
+          시대를 초월하는 초지능 경영 플랫폼.
         </div>
       </div>
 
@@ -798,36 +1096,28 @@ footer {
               </radialGradient>
             </defs>
 
-            <!-- soft glow -->
             <circle cx="250" cy="250" r="200" fill="url(#glow)"/>
-
-            <!-- outer ring -->
             <circle cx="250" cy="250" r="240" fill="none" stroke="#2a2520" stroke-width="1"/>
             <circle cx="250" cy="250" r="210" fill="none" stroke="#2a2520" stroke-width="0.5" stroke-dasharray="2 4"/>
-
-            <!-- inner rings -->
             <circle cx="250" cy="250" r="170" fill="none" stroke="#2a2520" stroke-width="0.5"/>
             <circle cx="250" cy="250" r="130" fill="none" stroke="#2a2520" stroke-width="0.5" stroke-dasharray="1 3"/>
 
-            <!-- rotating text outer -->
             <g class="rotating">
               <text class="ring-text">
                 <textPath href="#circlePath" startOffset="0">
-                  ARTIFICIAL SUPER INTELLIGENCE · BEYOND TOMORROW · ARTIFICIAL SUPER INTELLIGENCE · BEYOND TOMORROW ·
+                  ARTIFICIAL SUPER INTELLIGENCE · BEYOND TOMORROW · FOR SMALL BUSINESS · FOR THE FUTURE ·
                 </textPath>
               </text>
             </g>
 
-            <!-- rotating text inner -->
             <g class="rotating-reverse">
               <text class="ring-text" style="fill: #8b6f47;">
                 <textPath href="#circlePath2" startOffset="0">
-                  시 대 를 · 초 월 하 는 · 초 지 능 · 플 랫 폼 · SUPER · INTELLIGENCE · BEYOND · TOMORROW ·
+                  HOMEPAGE · MANAGEMENT · MARKETING · EDUCATION · HOMEPAGE · MANAGEMENT · MARKETING · EDUCATION ·
                 </textPath>
               </text>
             </g>
 
-            <!-- tick marks around -->
             <g stroke="#d4a574" stroke-width="1">
               <line x1="250" y1="10" x2="250" y2="22"/>
               <line x1="250" y1="478" x2="250" y2="490"/>
@@ -835,7 +1125,6 @@ footer {
               <line x1="478" y1="250" x2="490" y2="250"/>
             </g>
 
-            <!-- center wordmark -->
             <text class="center-mark" x="250" y="240">A</text>
             <text class="mark-sub" x="250" y="295">ASIOTH</text>
             <line x1="200" y1="310" x2="300" y2="310" stroke="#8b6f47" stroke-width="0.5"/>
@@ -848,38 +1137,183 @@ footer {
   </div>
 </header>
 
+<!-- MISSION -->
+<section class="mission">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-label-col">
+        <div class="section-number">01</div>
+        <div class="section-label">Our Mission</div>
+        <div class="mission-tag">Why we<br>exist</div>
+      </div>
+
+      <div>
+        <h2 class="mission-title">
+          <em>AI 시대</em>에도 중소기업은<br>
+          뒤에 남겨지고 있습니다.
+        </h2>
+
+        <div class="mission-body">
+          <p>
+            대기업은 거대한 AI 인프라와 수십 명의 전문가를 갖춥니다. 하지만 한국 <strong>770만 중소기업</strong>은 여전히 제대로 된 홈페이지 하나 없이, 각자의 스프레드시트와 오래된 관리 도구 사이에서 버티고 있습니다.
+          </p>
+          <p>
+            <strong>ASIOTH</strong>는 이 격차를 메웁니다. 중소기업 대표가 매일 마주하는 일 — 홈페이지 제작과 관리, 고객 응대, 마케팅, 직원 교육, 경영 의사결정 — 을 하나의 AI 플랫폼으로 통합합니다.
+          </p>
+          <p>
+            사람을 더 뽑지 않고도, 대기업 수준의 시스템을 가질 수 있습니다. 이것이 우리가 만드는 <em>새로운 기준</em>입니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="platform" id="platform">
+  <div class="container">
+    <div class="platform-header">
+      <div class="section-label" style="color: var(--accent);">§ 02 — Platform</div>
+      <h2 class="platform-title">
+        하나의 플랫폼,<br>
+        <em>네 개의 지능.</em>
+      </h2>
+      <p class="platform-intro">
+        기업 경영에 필수적인 네 가지 영역을 AI 기반으로 통합했습니다. 따로 구매하고, 따로 관리하고, 따로 학습할 필요가 없습니다.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-num">01 · Homepage</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="10" width="36" height="28" rx="2" stroke="#d4a574" stroke-width="1.2"/>
+          <line x1="6" y1="16" x2="42" y2="16" stroke="#d4a574" stroke-width="1.2"/>
+          <circle cx="10" cy="13" r="0.8" fill="#d4a574"/>
+          <circle cx="13" cy="13" r="0.8" fill="#d4a574"/>
+          <circle cx="16" cy="13" r="0.8" fill="#d4a574"/>
+          <rect x="10" y="20" width="14" height="2" fill="#8b6f47"/>
+          <rect x="10" y="24" width="20" height="1.5" fill="#555049"/>
+          <rect x="10" y="27" width="18" height="1.5" fill="#555049"/>
+          <rect x="10" y="32" width="8" height="3" fill="#d4a574"/>
+        </svg>
+        <h3 class="service-title">기업 홈페이지</h3>
+        <div class="service-title-en">Corporate Homepage Platform</div>
+        <p class="service-desc">
+          AI가 만들고, AI가 관리합니다. 제작부터 콘텐츠 갱신, SEO 최적화, 방문자 분석까지 — 전담 개발자 없이도 항상 살아있는 홈페이지.
+        </p>
+        <div class="service-features">
+          <span class="service-feature">AI 제작</span>
+          <span class="service-feature">자동 관리</span>
+          <span class="service-feature">SEO</span>
+          <span class="service-feature">분석</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">02 · Management</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="32" height="32" rx="2" stroke="#d4a574" stroke-width="1.2"/>
+          <line x1="8" y1="16" x2="40" y2="16" stroke="#d4a574" stroke-width="1" opacity="0.5"/>
+          <rect x="13" y="22" width="4" height="12" fill="#8b6f47"/>
+          <rect x="20" y="26" width="4" height="8" fill="#d4a574"/>
+          <rect x="27" y="19" width="4" height="15" fill="#d4a574"/>
+          <circle cx="22" cy="12" r="1.5" fill="#d4a574"/>
+        </svg>
+        <h3 class="service-title">통합 경영관리</h3>
+        <div class="service-title-en">Integrated Business Management</div>
+        <p class="service-desc">
+          매출, 고객, 재고, 직원, 회계 — 흩어진 경영 데이터를 하나의 대시보드로. AI가 패턴을 읽고, 무엇을 결정해야 할지 미리 알려줍니다.
+        </p>
+        <div class="service-features">
+          <span class="service-feature">대시보드</span>
+          <span class="service-feature">CRM</span>
+          <span class="service-feature">리포트</span>
+          <span class="service-feature">예측</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">03 · Marketing</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 8 24 L 20 16 L 20 20 L 38 20 L 38 28 L 20 28 L 20 32 L 8 24 Z" stroke="#d4a574" stroke-width="1.2" fill="none"/>
+          <circle cx="14" cy="12" r="1" fill="#d4a574"/>
+          <circle cx="18" cy="10" r="1" fill="#d4a574" opacity="0.6"/>
+          <circle cx="12" cy="37" r="1" fill="#d4a574" opacity="0.6"/>
+          <circle cx="16" cy="39" r="1" fill="#d4a574"/>
+        </svg>
+        <h3 class="service-title">AI 마케팅</h3>
+        <div class="service-title-en">Intelligent Marketing Automation</div>
+        <p class="service-desc">
+          카피 작성, 이미지 제작, SNS 운영, 고객 맞춤 캠페인. 대행사 수준의 결과물을, 혼자서도 만들어낼 수 있는 AI 마케팅 어시스턴트.
+        </p>
+        <div class="service-features">
+          <span class="service-feature">콘텐츠 생성</span>
+          <span class="service-feature">SNS 관리</span>
+          <span class="service-feature">타겟팅</span>
+          <span class="service-feature">광고</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-num">04 · Education</div>
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 8 18 L 24 10 L 40 18 L 24 26 L 8 18 Z" stroke="#d4a574" stroke-width="1.2" fill="none"/>
+          <path d="M 14 22 L 14 32 C 14 34 18 36 24 36 C 30 36 34 34 34 32 L 34 22" stroke="#d4a574" stroke-width="1.2" fill="none"/>
+          <line x1="40" y1="18" x2="40" y2="30" stroke="#d4a574" stroke-width="1.2"/>
+          <circle cx="40" cy="32" r="1.5" fill="#d4a574"/>
+        </svg>
+        <h3 class="service-title">임직원 교육</h3>
+        <div class="service-title-en">Continuous Learning Platform</div>
+        <p class="service-desc">
+          대표부터 신입까지, 각자의 역할에 맞춘 AI 맞춤 학습. 평생교육 인프라와 연계하여, 기업의 지식 자산이 사람이 바뀌어도 쌓입니다.
+        </p>
+        <div class="service-features">
+          <span class="service-feature">맞춤 학습</span>
+          <span class="service-feature">온보딩</span>
+          <span class="service-feature">역량 진단</span>
+          <span class="service-feature">자격</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- PHILOSOPHY -->
-<section class="section philosophy">
+<section class="philosophy" id="philosophy">
   <div class="container">
     <div class="philosophy-grid">
-      <div class="philosophy-marker">§ 01 — Philosophy</div>
+      <div class="philosophy-marker">§ 03 — Philosophy</div>
       <div class="philosophy-body">
         <p>
-          Most tools solve yesterday's problems. We are building for a <em>decade that hasn't arrived</em>.
+          대부분의 비즈니스 도구는 <em>어제의 문제</em>를 해결합니다. ASIOTH는 아직 오지 않은 10년을 위해 만듭니다.
         </p>
         <p class="kor">
-          대부분의 도구는 어제의 문제를 해결합니다.<br>
-          우리는 아직 오지 않은 10년을 위해 만듭니다.
+          AI는 이미 세상을 바꾸고 있습니다. 문제는, 그 변화가 중소기업에 도착하는 데 너무 오래 걸린다는 것입니다. 우리는 그 시차를 없앱니다.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DECOMPOSITION -->
-<section class="section decomp">
+<!-- ETYMOLOGY -->
+<section class="decomp">
   <div class="container">
-    <div class="section-label">§ 02 — Etymology</div>
-    <h2 class="section-title">
-      The name carries the <em>idea</em>.
-    </h2>
+    <div class="decomp-header">
+      <div class="section-label" style="margin-bottom: 24px;">§ 04 — Etymology</div>
+      <h2 class="decomp-title">
+        이름이 곧 <em>약속</em>입니다.
+      </h2>
+    </div>
 
     <div class="decomp-showcase">
       <div class="decomp-cell">
         <div class="decomp-big">ASI</div>
         <div class="decomp-label">Root</div>
         <div class="decomp-desc">
-          Artificial Super Intelligence. The horizon that frontier AI is steering toward — systems that outpace human reasoning across every domain.
+          <em>Artificial Super Intelligence.</em> 프론티어 AI가 향하는 지평 — 모든 영역에서 인간 추론을 넘어서는 시스템.
         </div>
         <div class="decomp-operator">+</div>
       </div>
@@ -888,7 +1322,7 @@ footer {
         <div class="decomp-big">OTH</div>
         <div class="decomp-label">Suffix</div>
         <div class="decomp-desc">
-          From <em>other</em>, <em>beyond</em>. An ancient echo of transcendence. Not a replacement for what exists — a departure from it.
+          <em>Other, Beyond.</em> 초월을 의미하는 고대의 접미사. 기존을 대체하는 것이 아닌, 그 너머로 나아가는 것.
         </div>
         <div class="decomp-operator">=</div>
       </div>
@@ -897,7 +1331,7 @@ footer {
         <div class="decomp-big">ASIOTH</div>
         <div class="decomp-label">Synthesis</div>
         <div class="decomp-desc">
-          Intelligence that does not imitate tomorrow, but steps past it. A platform for the businesses of the coming era, not the current one.
+          내일을 모방하지 않고 <em>지나치는</em> 지능. 지금의 기업이 아닌, 다가올 세대의 기업을 위한 플랫폼.
         </div>
       </div>
     </div>
@@ -909,13 +1343,60 @@ footer {
   <div class="container">
     <div class="manifesto-mark">*</div>
     <div class="manifesto-text">
-      Small companies <em>deserve</em><br>
-      the intelligence<br>
-      of the largest.
+      작은 기업도<br>
+      <em>가장 큰 기업만큼</em><br>
+      지능적일 자격이 있습니다.
     </div>
     <div class="manifesto-kor">
-      중소기업도 대기업 수준의 지능을 가져야 합니다.<br>
-      ASIOTH는 그 격차를 없앱니다.
+      Small companies deserve the intelligence of the largest.<br>
+      이것이 ASIOTH가 존재하는 이유입니다.
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <h2 class="timeline-title">
+      조용히, 그러나 <em>분명하게</em> — 4단계 여정.
+    </h2>
+
+    <div class="timeline">
+      <div class="timeline-item active">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">Phase 01 · Now</div>
+        <div class="timeline-year">2026</div>
+        <div class="timeline-desc">
+          창립과 기초 플랫폼 런칭. 기업 홈페이지 시스템부터 시작.
+        </div>
+      </div>
+
+      <div class="timeline-item future">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">Phase 02 · Expand</div>
+        <div class="timeline-year">2027</div>
+        <div class="timeline-desc">
+          경영관리·마케팅 통합. 평생교육 협회·전문가 조직 확장.
+        </div>
+      </div>
+
+      <div class="timeline-item future">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">Phase 03 · Scale</div>
+        <div class="timeline-year">2029</div>
+        <div class="timeline-desc">
+          전문가 조직 플랫폼으로. 세무·노무·법률까지 연결된 지능.
+        </div>
+      </div>
+
+      <div class="timeline-item future">
+        <div class="timeline-dot"></div>
+        <div class="timeline-phase">Phase 04 · Global</div>
+        <div class="timeline-year">2033</div>
+        <div class="timeline-desc">
+          동남아·일본·중국 진출. 글로벌 B2B2B SaaS 플랫폼.
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -924,25 +1405,38 @@ footer {
 <section class="coming">
   <div class="container">
     <div class="coming-grid">
-      <div class="coming-side">Founded<br>April 2026</div>
+      <div class="coming-side">Founded<br>April 2026<br>Seoul · Korea</div>
       <div class="coming-center">
         <span class="year">MMXXVI</span>
-        <div class="label">Now in motion</div>
+        <div class="label">Launching Soon</div>
       </div>
-      <div class="coming-side right">Seoul · Korea<br>Building quietly</div>
+      <div class="coming-side right">Platform Beta<br>Q4 2026<br>— 지금 대기자 명단</div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
+<section class="contact" id="contact">
   <div class="container">
-    <div class="contact-label">§ 03 — Get in touch</div>
+    <div class="contact-label">§ 05 — Get in touch</div>
     <h2 class="contact-title">
-      For partners, investors,<br>
-      and <em>the curious</em>.
+      함께 만들어갈<br>
+      <em>파트너를 찾습니다.</em>
     </h2>
-    <a href="mailto:contact@asioth.com" class="contact-email">contact@asioth.com</a>
+    <p class="contact-sub">
+      중소기업 대표님, 투자자, 협력 파트너, 그리고 AI로 기업을 바꾸고 싶은 모든 분을 환영합니다.
+    </p>
+
+    <div class="contact-emails">
+      <div class="contact-email-block">
+        <div class="contact-email-label">General</div>
+        <a href="mailto:contact@asioth.com" class="contact-email">contact@asioth.com</a>
+      </div>
+      <div class="contact-email-block">
+        <div class="contact-email-label">Partnership · Investment</div>
+        <a href="mailto:partners@asioth.com" class="contact-email">partners@asioth.com</a>
+      </div>
+    </div>
   </div>
 </section>
 
