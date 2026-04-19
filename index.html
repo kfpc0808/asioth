@@ -666,6 +666,45 @@ h1.hero-title .shine {
   font-size: 14.5px;
 }
 
+/* Swipe hint (hidden on desktop) */
+.pillars-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+}
+
+.pillars-hint-arrow {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 14px;
+  animation: hintPulse 2s ease-in-out infinite;
+}
+
+.pillars-hint-arrow:last-child {
+  animation-delay: 1s;
+}
+
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.4; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(3px); }
+}
+
+.pillars-hint-arrow:first-child {
+  animation-name: hintPulseLeft;
+}
+
+@keyframes hintPulseLeft {
+  0%, 100% { opacity: 0.4; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(-3px); }
+}
+
 /* IMPACT */
 .impact {
   padding: 140px 0;
@@ -1264,10 +1303,34 @@ footer {
   .services-grid { grid-template-columns: 1fr; }
   .service-card { padding: 44px 32px; min-height: auto; }
 
-  .pillars-grid { grid-template-columns: 1fr; }
-  .pillar-card { padding: 44px 32px; }
+  .pillars-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+  }
+  .pillars-grid::-webkit-scrollbar { display: none; }
+
+  .pillar-card {
+    flex: 0 0 92%;
+    min-width: 92%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    border: 1px solid var(--line);
+    padding: 44px 32px;
+  }
   .pillar-title { font-size: 26px; }
   .pillar-icon { width: 44px; height: 44px; margin-bottom: 24px; }
+
+  .pillars-hint { display: flex; }
 
   .impact-grid { grid-template-columns: 1fr; }
   .impact-card { padding: 44px 32px; }
@@ -1563,6 +1626,12 @@ footer {
         </ul>
       </div>
 
+    </div>
+
+    <div class="pillars-hint" aria-hidden="true">
+      <span class="pillars-hint-arrow">←</span>
+      <span class="pillars-hint-text">좌우로 넘겨보세요</span>
+      <span class="pillars-hint-arrow">→</span>
     </div>
   </div>
 </section>
